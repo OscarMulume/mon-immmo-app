@@ -15,6 +15,8 @@ interface Listing {
   location: string;
   city: string;
   district: string;
+  category: string;
+  images: string[];
   description: string;
   images_urls: string[];
   status: 'pending' | 'published';
@@ -55,6 +57,8 @@ export default function UnifiedListingsPage() {
         const formatted = (data as any[]).map((item) => ({
           ...item,
           currency: item.currency || 'USD',
+          category: item.category || '',
+          images: Array.isArray(item.images) && item.images.length > 0 ? item.images : (item.images_urls || []),
           location: item.location || `${item.city || ''} ${item.district || ''}`.trim(),
           images_urls: item.images_urls || []
         }));

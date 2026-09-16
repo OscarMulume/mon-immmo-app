@@ -210,6 +210,7 @@ export default function EditAdPage() {
             <button type="submit" disabled={updating} className="w-full bg-blue-600 text-white py-5 rounded-[24px] font-black uppercase text-[10px] tracking-[0.2em] shadow-xl hover:bg-slate-900 transition-all active:scale-95 disabled:opacity-50 mt-4 shadow-blue-100">
               {updating ? 'Mise à jour sécurisée...' : 'Enregistrer les modifications'}
             </button>
+          </div>
         </form>
 
         <p className="mt-12 text-center text-slate-300 font-bold text-[9px] uppercase tracking-[0.4em]">IMMO-CI — Serveur Kinshasa SSL Secure</p>

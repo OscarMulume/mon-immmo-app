@@ -9,6 +9,7 @@ interface Listing {
   id: string;
   title: string;
   price: number;
+  currency: string;
   city: string;
   district: string;
   images: string[];
@@ -43,6 +44,7 @@ export default function FavorisPage() {
         // Formater les images pour le composant ListingCard
         const formatted = (data as any[] || []).map(item => ({
           ...item,
+          currency: item.currency || 'FCFA',
           images: item.images_urls || item.images || []
         }));
 

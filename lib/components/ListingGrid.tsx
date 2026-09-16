@@ -10,6 +10,7 @@ interface ListingData {
   id: string;
   title: string;
   price: number;
+  currency: string;
   city: string;
   district: string;
   images_urls: string[];
@@ -64,6 +65,7 @@ export default function ListingGrid() {
         // Transformation des données pour ListingCard
         const formattedData = (data as unknown as ListingData[] || []).map((item) => ({
           ...item,
+          currency: item.currency || 'FCFA',
           images: item.images_urls
         }));
 

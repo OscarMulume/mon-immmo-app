@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
-import { Database } from './database.types'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
-// On crée le client en lui disant d'utiliser nos types personnalisés
-export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
+// Client non contraint : `database.types.ts` est en cours de resynchronisation
+// avec le schéma réel (tables annonces/districts, colonnes is_admin...).
+export const supabase = createClient<any>(supabaseUrl, supabaseAnonKey)
